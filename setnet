@@ -1,0 +1,109 @@
+Q1. Calculator 
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Gr no:62, Name:Kuddus Shaikh\nP: ");
+        double p = Convert.ToDouble(Console.ReadLine())
+       Console.Write("R%: ");
+        double r = Convert.ToDouble(Console.ReadLine());
+        Console.Write("T: ");
+        double t = Convert.ToDouble(Console.ReadLine());
+        double si = p * r * t / 100;
+        double ci = p * Math.Pow(1 + r / 100, t) - p;
+        Console.WriteLine("\nSI = {0}\nCI = {1}", Math.Round(si, 2), Math.Round(ci, 2));
+        Console.ReadKey();
+    }
+}
+
+
+Q2. Fibonacci Series 
+using System;
+class P
+{
+    static void Main()
+    {
+        Console.Write("Gr no:62, Name:Kuddus Shaikh\nTerms: ");
+        int n = int.Parse(Console.ReadLine()), a = 0, b = 1;
+        while (n-- > 0) { Console.Write(a + " "); b += a; a = b - a; }
+        Console.ReadKey();
+    }
+}
+
+Q3.Boxing and unboxing 
+using System;
+class P
+{
+    static void Main()
+    {
+        Console.Write("GRno:62, Name:Kuddus Shaikh\n");
+        int a = 10; object obj = a; int b = (int)obj;
+        Console.WriteLine("a={0}\nobj={1}\nb={2}", a, obj, b);
+        Console.ReadKey();
+    }
+}
+
+Q4. Radio button and drop-down ( win form application)
+//button pe double click kar k is e paste karna hai 
+string s = "You Have Been Enrolled In";
+            if (radioButton1.Checked == true)
+            {
+                s += radioButton1.Text;
+            }
+            else if (radioButton2.Checked == true)
+            {
+                s += radioButton2.Text;
+            }
+            else if (radioButton3.Checked == true)
+            {
+                s += radioButton3.Text;
+            }
+            s += comboBox1.SelectedItem;
+            label5.Text = s;
+
+
+Q5. Validator Control (web)
+//Add this code by selecting 3 } of design source code 
+protected void Button1_Click(object sender, EventArgs e)
+{
+Response.Write("Submitted");
+}
+protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+{
+string str = args.Value;
+if (str.Length < 7 || str.Length > 20)
+args.IsValid = false;
+else
+args.IsValid = true;
+}
+}
+}
+
+Q9. Exception handling (web )
+// take 2 label in design 
+
+WebForm1.aspx.cs
+//Replace this from protected
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                throw new UserDefinedException("New User Defined Exception");
+            }
+            catch (Exception ex)
+            {
+                Label1.Text = "Exception caught here" + ex.ToString();
+            }
+            Label2.Text = "Final Statement that is executed";
+        }
+        class UserDefinedException : Exception
+        {
+            public UserDefinedException(string str)
+            {
+                Console.WriteLine("User defined exception");
+            }
+        }
+    }
+}
+
